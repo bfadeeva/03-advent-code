@@ -38,13 +38,14 @@ fetch('input.txt')
     let total = 0;
     let alphabetUpper = alpha.map((x) => String.fromCharCode(x));
 
-      // this is wrong - why?
     for (let i = 0; i < priorities.length; i++) {
-      //total += alphabet.indexOf(priorities[i]) + 1
-      //total += alphabetUpper.indexOf(priorities[i]) + 28
-      console.log(alphabet.indexOf(priorities[i]) + 1, alphabetUpper.indexOf(priorities[i]) + 28)
-    }
-    
+      if (priorities[i] === priorities[i].toLowerCase()) {
+        total += alphabet.indexOf(priorities[i]) + 1
+      } else {
+        total += alphabetUpper.indexOf(priorities[i]) + 27
+      }
+      }
+  
     console.log(total)
 
   })
@@ -62,3 +63,5 @@ fetch('input.txt')
       // How can I test if a letter in a string is uppercase or lowercase?
       // str.toUpperCase() === str && str.toLowerCase() !== str
   // 5. count total
+      //total += alphabet.indexOf(priorities[i]) + 1
+      //total += alphabetUpper.indexOf(priorities[i]) + 28
